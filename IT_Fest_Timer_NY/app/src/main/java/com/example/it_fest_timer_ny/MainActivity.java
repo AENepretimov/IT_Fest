@@ -35,16 +35,12 @@ public class MainActivity extends AppCompatActivity {
         iv_backGround = (ImageView) findViewById(R.id.iv_mainImage);
         iv_backGround.setImageResource(R.drawable.ic_christmas_tree);
 
-
         text = (TextView) findViewById(R.id.tv_timer_show);
 
+        //Long timeNow = testTime();
+        Long timeNow = Calendar.getInstance().getTimeInMillis();
+
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.getInstance().get(Calendar.YEAR), 11, 31,
-                23, 59, 50);
-        Long timeNow = calendar.getTimeInMillis();//Calendar.getInstance().getTimeInMillis();
-
-
-        calendar = Calendar.getInstance();
         calendar.set(Calendar.getInstance().get(Calendar.YEAR) + 1, 0, 1,
                 0, 0, 0);
         Long timeNY = calendar.getTimeInMillis();
@@ -56,10 +52,18 @@ public class MainActivity extends AppCompatActivity {
 
         countDownTimer = new MalibuCountDownTimer(startTime, interval);
         countDownTimer.start();
-
-
     }
 
+    private long testTime() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.getInstance().get(Calendar.YEAR),
+                11,
+                31,
+                23,
+                59,
+                50);
+        return calendar.getTimeInMillis();
+    }
 
     // CountDownTimer class
     public class MalibuCountDownTimer extends CountDownTimer {
@@ -84,11 +88,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onTick(long millisUntilFinished) {
 
-            if( changePosition ){
+            if (changePosition) {
                 iv_santa1.setScaleX(-1f);
                 iv_santa2.setScaleX(-1f);
                 iv_santa3.setScaleX(-1f);
-            }else {
+            } else {
                 iv_santa1.setScaleX(1f);
                 iv_santa2.setScaleX(1f);
                 iv_santa3.setScaleX(1f);
@@ -100,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
             int minutes = (int) ((millisUntilFinished / (1000 * 60)) % 60);
             int hours = (int) ((millisUntilFinished / (1000 * 60 * 60)) % 24);
 
-            iv_backGround.setScaleY( 1 - (days / (float)366) );
-            iv_backGround.setScaleX( 1 - (days / (float)366) );
+            iv_backGround.setScaleY(1 - (days / (float) 366));
+            iv_backGround.setScaleX(1 - (days / (float) 366));
 
             text.setText("Time :" +
                     " " + String.valueOf(days) +
