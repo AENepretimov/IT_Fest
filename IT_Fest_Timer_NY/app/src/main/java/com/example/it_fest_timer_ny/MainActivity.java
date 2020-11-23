@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private final long interval = 1000;
 
     private TextView text;
-    //private FrameLayout frameLayout; 7
+    private FrameLayout frameLayout;
     private ImageView iv_santa1, iv_santa2, iv_santa3;
     private ImageView iv_backGround;
 
