@@ -45,9 +45,6 @@ public class MainActivity extends AppCompatActivity {
                 0, 0, 0);
         Long timeNY = calendar.getTimeInMillis();
 
-        Calendar calendar1 = Calendar.getInstance();
-        calendar1.setTimeInMillis(timeNY);
-
         startTime = timeNY - timeNow;
 
         countDownTimer = new MalibuCountDownTimer(startTime, interval);
