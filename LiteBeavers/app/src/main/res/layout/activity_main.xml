@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/ic_grass">
+
+    <TextView
+        android:id="@+id/tv_score"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="50sp"
+        android:textColor="@color/myBrown"
+        android:gravity="center"
+        android:textStyle="italic"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+
+        <ImageView
+            android:id="@+id/iv_bvr1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/iv_bvr2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/iv_bvr3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Start"
+        android:background="@color/myBrownLight"
+        android:textColor="@color/myBrown"
+        android:textSize="40sp"
+        android:layout_weight="1"
+        android:layout_margin="50dp"
+        android:textStyle="italic"/>
+</LinearLayout>
