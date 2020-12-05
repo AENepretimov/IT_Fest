@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Crystal_ball_IT_Fest"
