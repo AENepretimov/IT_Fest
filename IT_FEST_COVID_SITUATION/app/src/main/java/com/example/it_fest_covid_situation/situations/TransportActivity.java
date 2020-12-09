@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.it_fest_covid_situation.ImageTimer;
+import com.example.it_fest_covid_situation.timer.ImageTimer;
 import com.example.it_fest_covid_situation.R;
 import com.example.it_fest_covid_situation.RegisterActivity;
 import com.example.it_fest_covid_situation.model.Player;
@@ -32,7 +32,7 @@ public class TransportActivity extends AppCompatActivity {
         player = (Player) (getIntent().getSerializableExtra(RegisterActivity.MSG_NAME));
 
         tv_point = findViewById(R.id.tv_point);
-        tv_point.setText(player.getPoint().toString());
+        tv_point.setText("Угроза заражения : " + player.getPoint().toString() + "%");
 
         iv_player = findViewById(R.id.iv_player);
         tv_text = findViewById(R.id.tv_story);

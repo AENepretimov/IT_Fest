@@ -68,6 +68,7 @@
         android:layout_margin="12dp"
         android:text="point"
         android:textSize="25sp"
+        android:textColor="@android:color/black"
         android:textStyle="bold" />
 
 </FrameLayout>

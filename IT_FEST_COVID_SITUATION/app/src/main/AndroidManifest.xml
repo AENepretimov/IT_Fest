@@ -8,13 +8,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+
         android:theme="@style/Theme.IT_FEST_COVID_SITUATION">
-        <activity android:name=".situations.FinalActivity"></activity>
-        <activity android:name=".situations.WorkActivity" />
-        <activity android:name=".situations.TransportActivity" />
-        <activity android:name=".situations.NeighborActivity" />
-        <activity android:name=".situations.MorningActivity" />
-        <activity android:name=".RegisterActivity">
+        <activity android:name=".situations.FinalActivity"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".situations.WorkActivity"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".situations.TransportActivity"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".situations.NeighborActivity"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".situations.MorningActivity"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".RegisterActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
