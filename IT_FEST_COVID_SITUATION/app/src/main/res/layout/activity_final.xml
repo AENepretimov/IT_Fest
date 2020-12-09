@@ -16,4 +16,16 @@
         android:background="@drawable/rounded_textview"
         />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_img_src"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_margin="12dp"
+        android:textStyle="bold"
+        android:padding="12dp"
+        android:text="Благодарим freepic.com за картинки!"
+        android:textSize="10sp"
+        android:background="@drawable/rounded_textview"/>
+
 </FrameLayout>

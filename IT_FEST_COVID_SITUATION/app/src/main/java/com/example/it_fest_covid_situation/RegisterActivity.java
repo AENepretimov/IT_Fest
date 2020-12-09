@@ -22,8 +22,6 @@ public class RegisterActivity extends AppCompatActivity {
     private CheckBox cb_man, cb_woman;
     private Button btn_start;
 
-    private Player player;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         cb_woman.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 cb_man.setChecked(!b);
             }
         });

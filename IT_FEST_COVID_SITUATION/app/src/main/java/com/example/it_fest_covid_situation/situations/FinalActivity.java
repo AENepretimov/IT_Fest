@@ -1,8 +1,12 @@
 package com.example.it_fest_covid_situation.situations;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.it_fest_covid_situation.R;
@@ -46,5 +50,14 @@ public class FinalActivity extends AppCompatActivity {
                 break;
         }
 
+        findViewById(R.id.btn_img_src).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://www.freepik.com/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
     }
 }

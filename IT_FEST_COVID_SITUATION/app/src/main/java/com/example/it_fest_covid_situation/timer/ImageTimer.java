@@ -38,6 +38,9 @@ public class ImageTimer extends CountDownTimer {
 
     @Override
     public void onFinish() {
+
         textView.setText( text );
+        imageView.setAlpha(1f);
+        textView.setAlpha(1f);
     }
 }
