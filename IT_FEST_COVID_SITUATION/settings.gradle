@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "IT_FEST_COVID_SITUATION"
