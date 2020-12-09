@@ -1,8 +1,11 @@
 package com.example.it_fest_covid_situation.timer;
 
+import android.content.Context;
 import android.os.CountDownTimer;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.it_fest_covid_situation.R;
 
 public class ImageTimer extends CountDownTimer {
     private ImageView imageView;
@@ -14,7 +17,7 @@ public class ImageTimer extends CountDownTimer {
 
     private Float alha = 0.0f;
 
-    public ImageTimer(ImageView imageView, Integer imageId, TextView textView, String text) {
+    public ImageTimer(Context context, ImageView imageView, Integer imageId, TextView textView, String text) {
         super(START_TIME, INTERVAL);
         this.imageView = imageView;
         this.textView = textView;
@@ -22,6 +25,8 @@ public class ImageTimer extends CountDownTimer {
         this.imageView.setImageResource( imageId );
         this.imageView.setAlpha(alha);
         this.textView.setText( text );
+        this.textView.setBackground(context.getDrawable(R.drawable.rounded_textview));
+
     }
 
     @Override

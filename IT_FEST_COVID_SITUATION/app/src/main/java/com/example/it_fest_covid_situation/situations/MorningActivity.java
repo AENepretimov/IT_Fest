@@ -38,9 +38,9 @@ public class MorningActivity extends AppCompatActivity {
         tv_text = findViewById(R.id.tv_story);
         String str = String.format(getString(R.string.morning), player.getName());
         if (player.isSex()) {
-            imageTimer = new ImageTimer(iv_player, R.drawable.ic_man1, tv_text, str);
+            imageTimer = new ImageTimer(this, iv_player, R.drawable.ic_man1, tv_text, str);
         }else{
-            imageTimer = new ImageTimer(iv_player, R.drawable.ic_woman1, tv_text, str);
+            imageTimer = new ImageTimer(this, iv_player, R.drawable.ic_woman1, tv_text, str);
         }
 
         imageTimer.start();

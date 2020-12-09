@@ -39,15 +39,15 @@ public class NeighborActivity extends AppCompatActivity {
         String str = String.format(getString(R.string.neighbor));
         if (player.isMask()){
             if (player.isSex()) {
-                imageTimer = new ImageTimer(iv_player, R.drawable.ic_man_mask, tv_text, str);
+                imageTimer = new ImageTimer(this, iv_player, R.drawable.ic_man_mask, tv_text, str);
             } else {
-                imageTimer = new ImageTimer(iv_player, R.drawable.ic_woman_mask, tv_text, str);
+                imageTimer = new ImageTimer(this, iv_player, R.drawable.ic_woman_mask, tv_text, str);
             }
         }else {
             if (player.isSex()) {
-                imageTimer = new ImageTimer(iv_player, R.drawable.ic_man1, tv_text, str);
+                imageTimer = new ImageTimer(this, iv_player, R.drawable.ic_man1, tv_text, str);
             } else {
-                imageTimer = new ImageTimer(iv_player, R.drawable.ic_woman1, tv_text, str);
+                imageTimer = new ImageTimer(this, iv_player, R.drawable.ic_woman1, tv_text, str);
             }
         }
         imageTimer.start();

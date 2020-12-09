@@ -24,6 +24,7 @@
             android:layout_marginRight="120dp"
             android:layout_gravity="center"
             android:textColor="@android:color/black"
+            android:padding="12dp"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -60,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:layout_gravity="top | right "
+        android:layout_gravity="top|right "
         android:layout_margin="12dp"
         android:text="point"
         android:textSize="25sp"
