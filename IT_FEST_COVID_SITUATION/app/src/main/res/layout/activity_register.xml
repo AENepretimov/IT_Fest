@@ -4,6 +4,16 @@
     android:layout_height="match_parent"
     android:background="@color/bck">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="20dp"
+        android:text="COVID19"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -26,7 +36,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:background="#889CBD"
+            android:padding="12dp"
+            android:background="@drawable/rounded_textview"
             android:hint="Имя"
             android:textColor="@android:color/black"
             android:textColorHint="#434447"
@@ -53,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="М"
+                android:gravity="right"
                 android:textColor="@android:color/white"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -60,6 +72,7 @@
             <CheckBox
                 android:id="@+id/cb_man"
                 android:layout_width="0dp"
+                android:layout_gravity="center_vertical"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 
@@ -68,6 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Ж"
+                android:gravity="right"
                 android:textColor="@android:color/white"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -76,21 +90,23 @@
                 android:id="@+id/cb_woman"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1" />
 
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_start"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="30dp"
-            android:background="#889CBD"
+            android:background="@drawable/rounded_textview"
             android:text="Начать"
             android:textColor="@android:color/white"
             android:textSize="25sp"
+            android:padding="12dp"
             android:textStyle="bold" />
 
 

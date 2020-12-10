@@ -38,9 +38,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:layout_margin="12dp"
+                android:padding="12dp"
                 android:text="@string/btn_left_work"
                 android:textSize="25sp"
-                android:background="@color/btn"
+                android:background="@drawable/rounded_textview"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -49,8 +50,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:layout_margin="12dp"
+                android:padding="12dp"
                 android:text="@string/btn_right_work"
-                android:background="@color/btn"
+                android:background="@drawable/rounded_textview"
                 android:textSize="25sp"
                 android:textStyle="bold" />
         </FrameLayout>
