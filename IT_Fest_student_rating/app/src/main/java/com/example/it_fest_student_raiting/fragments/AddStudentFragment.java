@@ -22,16 +22,16 @@ import com.example.it_fest_student_raiting.model.Student;
 import com.google.android.material.snackbar.Snackbar;
 
 public class AddStudentFragment extends Fragment {
+    EditText et_group, et_name;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_add_student, container, false);
-        EditText et_name = view.findViewById(R.id.et_name);
-        EditText et_group = view.findViewById(R.id.et_group);
-        et_name.setText("");
-        et_group.setText("");
+        et_name = view.findViewById(R.id.et_name);
+        et_group = view.findViewById(R.id.et_group);
+
 
 
         AppCompatButton btn_add = (AppCompatButton) view.findViewById(R.id.btn_add);
@@ -59,6 +59,13 @@ public class AddStudentFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        et_name.setText("");
+        et_group.setText("");
     }
 
     @Override

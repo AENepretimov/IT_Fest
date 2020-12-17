@@ -27,25 +27,19 @@ public class ChangeStudentFragment extends Fragment {
     EditText et_group;
     EditText et_score;
 
+    Student student;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_change_student, container, false);
 
-        Student student = (Student) (getArguments().getSerializable(MainActivity.MSG_NAME));
-        /*StudentDbHelper dbHelper = new StudentDbHelper(getContext());
-        dbHelper.changeStudent(student);
-
-
-*/
         et_name = view.findViewById(R.id.et_name);
         et_group = view.findViewById(R.id.et_group);
         et_score = view.findViewById(R.id.et_score);
 
-        et_name.setText( student.getName() );
-        et_group.setText( student.getGr() );
-        et_score.setText( student.getScore().toString() );
+
 
         btn_save = (AppCompatButton) view.findViewById(R.id.btn_save);
         btn_save.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +71,16 @@ public class ChangeStudentFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        student = (Student) (getArguments().getSerializable(MainActivity.MSG_NAME));
+
+        et_name.setText( student.getName() );
+        et_group.setText( student.getGr() );
+        et_score.setText( student.getScore().toString() );
     }
 
     @Override
