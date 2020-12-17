@@ -6,6 +6,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import com.example.it_fest_student_raiting.MainActivity;
 import com.example.it_fest_student_raiting.R;
 import com.example.it_fest_student_raiting.db.StudentDbHelper;
 import com.example.it_fest_student_raiting.model.Student;
+import com.google.android.material.snackbar.Snackbar;
 
 public class ChangeStudentFragment extends Fragment {
 
@@ -49,21 +51,28 @@ public class ChangeStudentFragment extends Fragment {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String txt_name = et_name.getText().toString();
+                String txt_group = et_group.getText().toString();
+                String txt_score = et_score.getText().toString();
 
-                StudentDbHelper dbHelper = new StudentDbHelper( getContext() );
+                if (TextUtils.isEmpty(txt_name) || TextUtils.isEmpty(txt_group) || TextUtils.isEmpty(txt_score)){
+                    Snackbar.make(view, R.string.empty_data_error, Snackbar.LENGTH_SHORT)
+                            .setAction("Atcion", null)
+                            .show();
+                }else {
+                    StudentDbHelper dbHelper = new StudentDbHelper(getContext());
 
+                    Student testStudent = new Student(student.getId(),
+                            txt_name,
+                            txt_group,
+                            Integer.valueOf(txt_score));
 
+                    dbHelper.changeStudent(testStudent);
 
-                Student testStudent = new Student( student.getId(),
-                        et_name.getText().toString(),
-                        et_group.getText().toString(),
-                        Integer.valueOf( et_score.getText().toString() ));
+                    getActivity().getSupportFragmentManager().beginTransaction().remove(ChangeStudentFragment.this).commit();
 
-                dbHelper.changeStudent(testStudent);
-
-                getActivity().getSupportFragmentManager().beginTransaction().remove(ChangeStudentFragment.this).commit();
-
-                dbHelper.close();
+                    dbHelper.close();
+                }
             }
         });
 

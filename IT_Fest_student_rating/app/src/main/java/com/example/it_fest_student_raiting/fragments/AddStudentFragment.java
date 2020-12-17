@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,23 +28,33 @@ public class AddStudentFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_add_student, container, false);
-
+        EditText et_name = view.findViewById(R.id.et_name);
+        EditText et_group = view.findViewById(R.id.et_group);
+        et_name.setText("");
+        et_group.setText("");
 
 
         AppCompatButton btn_add = (AppCompatButton) view.findViewById(R.id.btn_add);
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                StudentDbHelper dbHelper = new StudentDbHelper( getContext() );
+                String txt_name = et_name.getText().toString();
+                String txt_group = et_group.getText().toString();
 
-                EditText et_name = getView().findViewById(R.id.et_name);
-                EditText et_group = getView().findViewById(R.id.et_group);
-                Student testStudent = new Student(0, et_name.getText().toString(), et_group.getText().toString(), 0);
-                dbHelper.addStudent(testStudent);
+                if (TextUtils.isEmpty(txt_name) || TextUtils.isEmpty(txt_group) ){
+                    Snackbar.make(view, R.string.empty_data_error, Snackbar.LENGTH_SHORT)
+                            .setAction("Atcion", null)
+                            .show();
+                }else {
+                    StudentDbHelper dbHelper = new StudentDbHelper(getContext());
 
-                getActivity().getSupportFragmentManager().beginTransaction().remove(AddStudentFragment.this).commit();
+                    Student testStudent = new Student(0, txt_name, txt_group, 0);
+                    dbHelper.addStudent(testStudent);
 
-                dbHelper.close();
+                    getActivity().getSupportFragmentManager().beginTransaction().remove(AddStudentFragment.this).commit();
+
+                    dbHelper.close();
+                }
             }
         });
 
